@@ -21,7 +21,7 @@ int equals(char *string, char *string_aux){
 	aux = string;
 	aux_ptr = string_aux;
 
-	if(length(string) != length(string_aux)) {
+	if(length(string) != length(string_aux)){
 	return 1; 
 	}
 
@@ -53,7 +53,7 @@ int equalsIgnoreCase(char *string, char *string_aux){
 		if (((int)*aux >= 65 && (int)*aux <= 90) || ((int)*aux >= 97 && (int)*aux <= 122)){
 
 			if((int)*aux >= 65 && (int)*aux <= 90){
-				if((int)*aux != (int)*aux_ptr ) {
+				if((int)*aux != (int)*aux_ptr ){
 					if ((int)*aux  != ((int)*aux_ptr - 32)){
 						return 0;
 					}
@@ -61,7 +61,7 @@ int equalsIgnoreCase(char *string, char *string_aux){
 			}
 
 			if((int)*aux >= 97 && (int)*aux <= 122){
-				if((int)*aux != (int)*aux_ptr ) {
+				if((int)*aux != (int)*aux_ptr ){
 					if ((int)*aux   != ((int)*aux_ptr + 32)){
 						return 0;
 					}
@@ -96,7 +96,7 @@ char *substring(char *string, int primeiro, int ultimo){
 	}
 	if ((ultimo - primeiro) == 1) {
 		aux = (string + (primeiro));
-		if (ultimo < length(string)) {
+		if (ultimo < length(string)){
 			aux++;
 			*aux = '\0';
 		}
@@ -105,11 +105,11 @@ char *substring(char *string, int primeiro, int ultimo){
 	}
 	aux = (string + (primeiro - 1));
 
-	for(count = primeiro; count < ultimo; count++) {
+	for(count = primeiro; count < ultimo; count++){
 		aux++;
 	}
 
-	if (ultimo < length(string)) {
+	if (ultimo < length(string)){
 		aux++;
 		*aux = '\0';
 	}
@@ -132,8 +132,8 @@ char *toUpperCase(char *string){
 
 	aux = string;
 
-	for(count = 0; count < length(string); count++) {
-		if((int)*aux >= 97 && (int)*aux <= 122) {
+	for(count = 0; count < length(string); count++){
+		if((int)*aux >= 97 && (int)*aux <= 122){
 			*aux = (char)((int)*aux - 32);
 		}
 		aux++;
@@ -148,7 +148,7 @@ char *toLowerCase(char *string){
 	aux = string;
 
 	for(count = 0; count < length(string); count++){
-		if((int)*aux >= 65 && (int)*aux <= 90) {
+		if((int)*aux >= 65 && (int)*aux <= 90){
 			*aux = (char)((int)*aux + BASE_ANSI);
 		}
 		aux++;
@@ -163,7 +163,7 @@ char *replace(char *string, char str_old, char str_new){
 	aux = string;
 
 	for(count = 0; count < length(string); count++){
-		if(*aux == str_old) {
+		if(*aux == str_old){
 			*aux = str_new;
 		}
 		aux++;
@@ -197,10 +197,12 @@ int firstIndexOf(char *string, char str_at){
 	aux = string;
 	
 	for(count = 0; count <= length(string); count++){
-		if(count == length(string)) { return -1; }
+		if(count == length(string)) {
+		 return -1;
+		}
 		if(*aux == str_at){
       return count; 
-    }
+    		}
 		aux++;
 	}
 }
