@@ -9,7 +9,7 @@ int main(){
 	printf("Digite o nome teste: ");
 	gets(nome);
 	
-	printf("\n\n%s tem %d caracteres", nome, tamanho);
+	printf("\n\n%s tem %d caracteres", nome, tam);
 	return 0;
 }
 
@@ -118,12 +118,12 @@ char *substring(char *string, int primeiro, int ultimo){
 }
 
 int length(char *nome){
-	int tamanho=0;
+	int tam=0;
 	
-	for(tamanho=0; *nome != '\0'; tamanho++){ 
+	for(tam=0; *nome != '\0'; tam++){ 
 		nome++;
 	}
-	return tamanho;
+	return tam;
 }
 
 char *toUpperCase(char *string){
@@ -149,29 +149,29 @@ char *toLowerCase(char *string){
 
 	for(count = 0; count < length(string); count++){
 		if((int)*aux >= 65 && (int)*aux <= 90){
-			*aux = (char)((int)*aux + BASE_ANSI);
+			*aux = (char)((int)*aux + 32);
 		}
 		aux++;
 	}
 	return string;
 }
 
-char *replace(char *string, char str_old, char str_new){
+char *replace(char *string, char str1, char str2){
 	int count;
 	char *aux;
 
 	aux = string;
 
 	for(count = 0; count < length(string); count++){
-		if(*aux == str_old){
-			*aux = str_new;
+		if(*aux == str1){
+			*aux = str2;
 		}
 		aux++;
 	}
 	return string;
 }
 
-int lastIndexOf(char *string, char str_at){
+int lastIndexOf(char *string, char str_aux){
 	int count;
 	char *aux;
 
@@ -183,14 +183,14 @@ int lastIndexOf(char *string, char str_at){
 		if(count == -1){
 		 return -1; 
 		}
-		if(*aux == str_at){
+		if(*aux == str_aux){
 		 return count; 
 		}
 		aux--;
 	}
 }
 
-int firstIndexOf(char *string, char str_at){
+int firstIndexOf(char *string, char str_aux){
 	int count;
 	char *aux;
 
@@ -200,7 +200,7 @@ int firstIndexOf(char *string, char str_at){
 		if(count == length(string)) {
 		 return -1;
 		}
-		if(*aux == str_at){
+		if(*aux == str_aux){
       return count; 
     		}
 		aux++;
