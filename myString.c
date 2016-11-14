@@ -6,7 +6,7 @@ int main(){
 	
 	char nome[100];
 	
-	printf("Digite o nome: ");
+	printf("Digite o nome teste: ");
 	gets(nome);
 	
 	printf("\n\n%s tem %d caracteres", nome, tamanho);
