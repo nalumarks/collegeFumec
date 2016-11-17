@@ -130,3 +130,29 @@ int lastIndexOf(char *frase,char i){
 	}
 	return y;
 }
+
+// Thaíza
+
+void toUpperCase(char * string){
+	int tamanho, i;
+	tamanho = length(string);
+	for (i = 0; i < tamanho; i++){
+		if ((*string >= 97) && (*string <= 122)){
+		*string = *string - 32;
+		}
+		string++;	
+	}	
+}
+
+void toLowerCase(char * string){
+	int tamanho, i;
+	tamanho = length(string);
+	
+	for (i = 0; i < tamanho; i++){
+		if ((*string >=65) && (*string <=90)){
+		*string = *string + 32;
+		string++;
+		}		
+	}	
+}
+
