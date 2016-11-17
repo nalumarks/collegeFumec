@@ -2,17 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main(){
-	
-	char nome[100];
-	
-	printf("Digite o nome teste: ");
-	gets(nome);
-	
-	printf("\n\n%s tem %d caracteres", nome, tam);
-	return 0;
-}
-
+//ANNA
 int equals(char *string, char *string_aux){
 	int count;
 	char *aux;
@@ -78,44 +68,7 @@ int equalsIgnoreCase(char *string, char *string_aux){
 	return 1;
 }
 
-char *substring(char *string, int primeiro, int ultimo){
-	int count;
-	char caracter[(ultimo - primeiro)+1];
-	char *aux;
-
-	aux = string;
-
-	if (length(string) == (ultimo - primeiro)+1){ 
-	return aux;
-	}
-	if ((ultimo + 1) > length(string) && (ultimo - primeiro) > 1){
-	return NULL;
-	}
-	if (ultimo < primeiro) {
-	return (aux + primeiro); 
-	}
-	if ((ultimo - primeiro) == 1) {
-		aux = (string + (primeiro));
-		if (ultimo < length(string)){
-			aux++;
-			*aux = '\0';
-		}
-		aux = (string + (primeiro));
-		return aux;
-	}
-	aux = (string + (primeiro - 1));
-
-	for(count = primeiro; count < ultimo; count++){
-		aux++;
-	}
-
-	if (ultimo < length(string)){
-		aux++;
-		*aux = '\0';
-	}
-	aux = (string + (primeiro));
-	return aux;
-}
+// CAROL SUBSTRING
 
 int length(char *nome){
 	int tam=0;
@@ -126,36 +79,9 @@ int length(char *nome){
 	return tam;
 }
 
-char *toUpperCase(char *string){
-	int count;
-	char *aux;
+//CAROL FALTA SUBSTRING
 
-	aux = string;
-
-	for(count = 0; count < length(string); count++){
-		if((int)*aux >= 97 && (int)*aux <= 122){
-			*aux = (char)((int)*aux - 32);
-		}
-		aux++;
-	}
-	return string;
-}
-
-char *toLowerCase(char *string){
-	int count;
-	char *aux;
-
-	aux = string;
-
-	for(count = 0; count < length(string); count++){
-		if((int)*aux >= 65 && (int)*aux <= 90){
-			*aux = (char)((int)*aux + 32);
-		}
-		aux++;
-	}
-	return string;
-}
-
+//louise 
 char *replace(char *string, char str1, char str2){
 	int count;
 	char *aux;
@@ -171,38 +97,36 @@ char *replace(char *string, char str1, char str2){
 	return string;
 }
 
-int lastIndexOf(char *string, char str_aux){
-	int count;
-	char *aux;
-
-	aux = string;
-
-	for(; *aux != '\0'; aux++);
-
-	for(count = length(string); count >= -1 ; count--){
-		if(count == -1){
-		 return -1; 
+//gustavo
+int firstIndexOf(char *frase,char i){
+	int x;
+	for( x=0;*frase;x++){
+		if(i==*frase){
+			break;
 		}
-		if(*aux == str_aux){
-		 return count; 
-		}
-		aux--;
+		frase++;
 	}
+	return x;
 }
 
-int firstIndexOf(char *string, char str_aux){
-	int count;
-	char *aux;
+int length( char *frase){
+	int tamanho=0;
 
-	aux = string;
 	
-	for(count = 0; count <= length(string); count++){
-		if(count == length(string)) {
-		 return -1;
-		}
-		if(*aux == str_aux){
-      return count; 
-    		}
-		aux++;
+	for(tamanho=0; *frase;tamanho++){
+		frase++;
 	}
+	return tamanho;
+}
+
+int lastIndexOf(char *frase,char i){
+	int y=length(frase)-1;
+	frase = frase + (length(frase)-1);
+	for(y;*frase;y--){
+		if(i==*frase){
+			break;
+		}
+		frase--;
+	}
+	return y;
 }
