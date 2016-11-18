@@ -70,16 +70,28 @@ int equalsIgnoreCase(char *string, char *string_aux){
 
 // CAROL SUBSTRING
 
-int length(char *nome){
-	int tam=0;
-	
-	for(tam=0; *nome != '\0'; tam++){ 
-		nome++;
+void substring(char *nome, int posInicial, int posFinal){
+	int tamanho = (posFinal-posInicial)+1;
+	int i;
+	int posicao=posInicial;
+	char *novaString=(char *)malloc(tamanho);
+	for(i = 0;i < tamanho; i++){
+		novaString[i] = nome[posicao];
+		posicao++;
 	}
-	return tam;
+	printf("\n\nString copiada:\n%s",novaString);
 }
 
-//CAROL FALTA SUBSTRING
+int lenght(char *nome){		
+
+	int tamanho;
+	for(tamanho=0; *nome!='\0';tamanho++){
+		nome++;
+	}
+	return tamanho;
+}
+
+//CAROL 
 
 //louise 
 char *replace(char *string, char str1, char str2){
