@@ -1,3 +1,4 @@
+//#include "myString.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,10 +10,15 @@ typedef struct {
   	char dtNasc [11];
 }Usuario;
 
-typedef {
+typedef struct {
 	int dia;
 	int mes;
-	int ano
+	int ano;
 }Data;
 
+void menuPrincipal(int tam);
+
+#ifndef WINDOWS
+	#define WINDOWS
+#endif
 
