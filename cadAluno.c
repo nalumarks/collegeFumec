@@ -1,3 +1,4 @@
+#include "cadAluno.h"
 
 int main(){
 	int tamanho;
