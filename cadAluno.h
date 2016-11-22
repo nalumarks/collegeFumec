@@ -18,7 +18,8 @@ typedef struct {
 
 void menuPrincipal(int tam);
 
+Usuario *cadastroAluno(int tam);
+
 #ifndef WINDOWS
 	#define WINDOWS
 #endif
-
