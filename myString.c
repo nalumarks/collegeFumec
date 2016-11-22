@@ -144,8 +144,8 @@ int lastIndexOf(char *frase,char i){
 }
 
 // Thaíza
-/* ERRO ERRO ERRO ERRO ERRO ERRO
-void toUpperCase(char * string){
+
+char *toUpperCase(char * string){
 	int tamanho, i;
 	tamanho = length(string);
 	for (i = 0; i < tamanho; i++){
@@ -153,9 +153,10 @@ void toUpperCase(char * string){
 		*string = *string - 32;
 		}
 		string++;	
-	}	
+	}
+	return string;
 }
-
+/* ERRO ERRO ERRO ERRO ERRO ERRO
 void toLowerCase(char * string){
 	int tamanho, i;
 	tamanho = length(string);
