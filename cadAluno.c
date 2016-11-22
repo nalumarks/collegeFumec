@@ -24,6 +24,7 @@ void menuPrincipal(int tam){
 		
 		printf("\n\nESCOLHA UMA OPCAO: ");
 		scanf("%d", &op);
+		fflush(stdin);
 		
 		switch(op){
 			case 0 : break;
@@ -45,11 +46,30 @@ void menuPrincipal(int tam){
 Usuario *cadastroAluno(int tam){
 	Usuario *user;
 	Usuario *auxiliar;
-	
+	int i, verdadeiro;	
 	
 	user = (Usuario*) malloc(tam*sizeof(Usuario));
 	if(user=NULL){
 		printf("Alocacao nao realizada");
 	}
 	
-}
+	auxiliar = user;
+	
+	printf("\n\n+--------------CADASTRO--------------+");
+	for (i=0; i<tam; i++){
+		
+		do{
+			verdadeiro = 1;
+			printf("\nInforme NOME e SOBRENOME do aluno:\n");
+			fflush(stdin);
+			gets((*auxiliar).nome);
+			
+			
+		}while(!verdadeiro);
+		
+		auxiliar++;
+		
+	}//fim for
+	
+}//fim cadastroAluno
+
