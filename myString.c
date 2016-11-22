@@ -156,16 +156,17 @@ char *toUpperCase(char * string){
 	}
 	return string;
 }
-/* ERRO ERRO ERRO ERRO ERRO ERRO
-void toLowerCase(char * string){
+
+char *toLowerCase(char * string){
 	int tamanho, i;
 	tamanho = length(string);
 	
 	for (i = 0; i < tamanho; i++){
 		if ((*string >=65) && (*string <=90)){
 		*string = *string + 32;
-		string++;
-		}		
-	}	
+		}
+		string++;		
+	}
+	return string;	
 }
-*/
+
