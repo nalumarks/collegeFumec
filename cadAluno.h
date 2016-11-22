@@ -1,4 +1,4 @@
-//#include "myString.h"
+#include "myString.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -19,6 +19,7 @@ typedef struct {
 void menuPrincipal(int tam);
 
 Usuario *cadastroAluno(int tam);
+int camposVazios(char *str);
 
 #ifndef WINDOWS
 	#define WINDOWS
