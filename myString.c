@@ -69,7 +69,7 @@ int equalsIgnoreCase(char *string, char *string_aux){
 }
 
 // CAROL SUBSTRING
-
+/* ERRO ERRO ERRO ERRO ERRO ERRO/* ERRO ERRO ERRO ERRO ERRO ERRO
 void substring(char *nome, int posInicial, int posFinal){
 	int tamanho = (posFinal-posInicial)+1;
 	int i;
@@ -81,7 +81,7 @@ void substring(char *nome, int posInicial, int posFinal){
 	}
 	printf("\n\nString copiada:\n%s",novaString);
 }
-
+*/ ERRO ERRO ERRO ERRO ERRO ERRO
 int lenght(char *nome){		
 
 	int tamanho;
@@ -144,7 +144,7 @@ int lastIndexOf(char *frase,char i){
 }
 
 // Thaíza
-
+/* ERRO ERRO ERRO ERRO ERRO ERRO
 void toUpperCase(char * string){
 	int tamanho, i;
 	tamanho = length(string);
@@ -167,4 +167,4 @@ void toLowerCase(char * string){
 		}		
 	}	
 }
-
+*/
