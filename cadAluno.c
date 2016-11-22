@@ -46,7 +46,9 @@ void menuPrincipal(int tam){
 Usuario *cadastroAluno(int tam){
 	Usuario *user;
 	Usuario *auxiliar;
-	int i, verdadeiro;	
+	int i;
+	int verdadeiro;	
+	//String str = new;
 	
 	user = (Usuario*) malloc(tam*sizeof(Usuario));
 	if(user=NULL){
@@ -55,7 +57,7 @@ Usuario *cadastroAluno(int tam){
 	
 	auxiliar = user;
 	
-	printf("\n\n+--------------CADASTRO--------------+");
+	printf("\n\n+-------------- CADASTRO --------------+");
 	for (i=0; i<tam; i++){
 		
 		do{
@@ -64,12 +66,31 @@ Usuario *cadastroAluno(int tam){
 			fflush(stdin);
 			gets((*auxiliar).nome);
 			
+			verdadeiro = !camposVazios((*auxiliar).nome);
+			
+			if(!verdadeiro){
+				printf("\nO NOME NAO PODE FICAR EM BRANCO\n");
+			}
 			
 		}while(!verdadeiro);
 		
 		auxiliar++;
 		
-	}//fim for
+	}
 	
-}//fim cadastroAluno
+}
 
+int camposVazios(char *str) {
+	int i = 0;
+	char *auxiliar;
+	
+	auxiliar = str;
+	
+	for(i = 0; *(auxiliar) != '\0'; i++) {
+		if(*(auxiliar) != ' ') {
+			return 0;
+		}
+		auxiliar++;
+	}
+	return 1;
+}
