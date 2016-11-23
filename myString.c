@@ -169,4 +169,3 @@ char *toLowerCase(char * string){
 	}
 	return string;	
 }
-
