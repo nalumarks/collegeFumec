@@ -69,8 +69,8 @@ int equalsIgnoreCase(char *string, char *string_aux){
 }
 
 // CAROL SUBSTRING
-/* ERRO ERRO ERRO ERRO ERRO ERRO/* ERRO ERRO ERRO ERRO ERRO ERRO
-void substring(char *nome, int posInicial, int posFinal){
+
+char *substring(char *nome, int posInicial, int posFinal){
 	int tamanho = (posFinal-posInicial)+1;
 	int i;
 	int posicao=posInicial;
@@ -81,7 +81,7 @@ void substring(char *nome, int posInicial, int posFinal){
 	}
 	printf("\n\nString copiada:\n%s",novaString);
 }
-*/ ERRO ERRO ERRO ERRO ERRO ERRO
+
 int lenght(char *nome){		
 
 	int tamanho;
