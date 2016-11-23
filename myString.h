@@ -1,7 +1,7 @@
-#endif
+//#endif
 
 #ifndef new
-	#define new {.length=length, .equals=equals, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring, .toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
+	#define new {.length=length, .equals=equals, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring,.toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
 #endif
 
 #include "myString.c"
@@ -16,8 +16,8 @@ char *replace(char *str, char str_old, char str_new);
 char *substring(char *str, int primeiro, int ultimo);
 int equalsIgnoreCase(char *str, char *str_cmp) ;
 
-#ifndef STRING
-	#define STRING
+//#ifndef STRING
+//	#define STRING
 
 	typedef struct {
 		int   (*length)(char*);
@@ -31,4 +31,3 @@ int equalsIgnoreCase(char *str, char *str_cmp) ;
 		int   (*firstIndexOf)(char*, char);
 	
 	}String;
-	
