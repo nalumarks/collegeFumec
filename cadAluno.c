@@ -99,11 +99,14 @@ void buscarNumeroCasa() {
 	int numeroCasa;
 	int numeroBuscar;
 
-	printf("Buscar pelo número de casa Aluno\n");
+	printf("----Buscar pelo número de casa Aluno----\n");
 	printf("Digite o numero da casa do aluno: ");
-	scanf("%d", &numeroCasa);
+	gets(numeroCasa); //gets ou scanf?
 
 	if(numeroBuscar == numeroCasa){
+	printf("O nome do Aluno: \n", 			Usuario.nome); //confirmar como imprimir corretamente
+	printf("O endereco do Aluno: \n",		Usuario.endereco);
+	printf("A data de nascimento do Aluno: \n", 	Usuario.dtNasc);	
 		
 	}
 }
@@ -112,9 +115,9 @@ void buscarSobrenome() {
 	char sobrenome[100];
 	char sobrenomeBuscar[100];
 
-	printf("Buscar pelo sobrenome do Aluno\n");
-	printf("Digite o sobrenome do aluno: \n");
-	scanf("%s", &sobrenome);
+	printf("----Buscar pelo sobrenome do Aluno----\n");
+	printf("----Digite o sobrenome do aluno: \n");
+	gets(sobrenome);
 	
 	if(){
 		
@@ -125,8 +128,8 @@ void buscarAnoNascimento() {
 	int anoNascimento;
 	int anoBuscar;
 
-	printf("Buscar pelo ano de nascimento do Aluno \n");
-	printf("Digite o ano do nascimento do aluno: ");
+	printf("----Buscar pelo ano de nascimento do Aluno----\n");
+	printf("----Digite o ano do nascimento do aluno: ");
 	scanf("%d", &anoNascimento);
 	
 	if(){
@@ -138,8 +141,8 @@ void buscarUsuarioMesNascimento() {
 	int mesNascimento;
 	int mesBuscar;
 	
-	printf("Buscar pelo ano de nascimento do Aluno\n");
-	printf("Digite o mes do nascimento do aluno: ");
+	printf("----Buscar pelo mes de nascimento do Aluno----\n");
+	printf("----Digite o mes do nascimento do aluno: ");
 	scanf("%d", &mesNascimento);
 	
 	if(){
@@ -151,11 +154,11 @@ void buscarMatricula() {
 	int matricula;
 	int matriculaBuscar;
 
-	printf("Buscar pela matricula do Aluno \n");
-	printf("Digite a matricula do aluno: ");
+	printf("----Buscar pela matricula do Aluno----\n");
+	printf("----Digite a matricula do aluno: ");
 	scanf("%d", &matricula);
 	
 	if(){
 		
 	}
-}
+
