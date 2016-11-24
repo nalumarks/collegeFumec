@@ -3,6 +3,7 @@
 #include <stdlib.h>
 
 //ANNA
+/*
 int equals(char *string, char *string_aux){
 	int count;
 	char *aux;
@@ -26,7 +27,7 @@ int equals(char *string, char *string_aux){
 	}
 	return 0;
 }
-
+*/
 int equalsIgnoreCase(char *string, char *string_aux){
 	int count;
 	char *aux;
@@ -70,6 +71,7 @@ int equalsIgnoreCase(char *string, char *string_aux){
 
 // CAROL SUBSTRING
 
+/*
 char *substring(char *nome, int posInicial, int posFinal){
 	int tamanho = (posFinal-posInicial)+1;
 	int i;
@@ -81,7 +83,7 @@ char *substring(char *nome, int posInicial, int posFinal){
 	}
 	printf("\n\nString copiada:\n%s",novaString);
 }
-
+*/
 int lenght(char *nome){		
 
 	int tamanho;
@@ -145,7 +147,7 @@ int lastIndexOf(char *frase,char i){
 
 // Thaíza
 
-char *toUpperCase(char * string){
+void toUpperCase(char * string){
 	int tamanho, i;
 	tamanho = length(string);
 	for (i = 0; i < tamanho; i++){
@@ -153,19 +155,17 @@ char *toUpperCase(char * string){
 		*string = *string - 32;
 		}
 		string++;	
-	}
-	return string;
+	}	
 }
 
-char *toLowerCase(char * string){
+void toLowerCase(char * string){
 	int tamanho, i;
 	tamanho = length(string);
 	
 	for (i = 0; i < tamanho; i++){
 		if ((*string >=65) && (*string <=90)){
 		*string = *string + 32;
-		}
-		string++;		
-	}
-	return string;	
+		string++;
+		}		
+	}	
 }
