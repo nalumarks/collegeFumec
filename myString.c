@@ -71,19 +71,21 @@ int equalsIgnoreCase(char *string, char *string_aux){
 
 // CAROL SUBSTRING
 
-/*
 char *substring(char *nome, int posInicial, int posFinal){
 	int tamanho = (posFinal-posInicial)+1;
 	int i;
 	int posicao=posInicial;
 	char *novaString=(char *)malloc(tamanho);
+	
 	for(i = 0;i < tamanho; i++){
 		novaString[i] = nome[posicao];
 		posicao++;
 	}
-	printf("\n\nString copiada:\n%s",novaString);
+	
+	return novaString;
+	
 }
-*/
+
 int lenght(char *nome){		
 
 	int tamanho;
