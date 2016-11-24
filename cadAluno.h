@@ -21,6 +21,13 @@ void menuPrincipal(int tam);
 Usuario *cadastroAluno(int tam);
 int camposVazios(char *str);
 
+//preencher depois que a pesquisa estiver pronta
+void buscarNumeroCasa();
+void buscarSobrenome();
+void buscarAnoNascimento();
+void buscarUsuarioMesNascimento();
+void buscarMatricula();
+
 #ifndef WINDOWS
 	#define WINDOWS
 #endif
