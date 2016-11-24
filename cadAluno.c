@@ -33,12 +33,13 @@ void menuPrincipal(int tam){
 				break;
 			}//fim case 1
 			default:{
-				printf("Opcao invalida! Por favor, informe outra opcao :) ");
+				fflush(stdin);
+				printf("\n\nOpcao invalida! Por favor, informe outra opcao\n\n ");
 				break;
 			}
 			
 		}//fim switch
-		
+		system("pause");
 	}while (op !=0);
 	
 }//fim menu principal
@@ -48,10 +49,9 @@ Usuario *cadastroAluno(int tam){
 	Usuario *auxiliar;
 	int i;
 	int verdadeiro;	
-	//String str = new;
 	
 	user = (Usuario*) malloc(tam*sizeof(Usuario));
-	if(user=NULL){
+	if(user==NULL){
 		printf("Alocacao nao realizada");
 	}
 	
@@ -62,11 +62,14 @@ Usuario *cadastroAluno(int tam){
 		
 		do{
 			verdadeiro = 1;
+			
 			printf("\nInforme NOME e SOBRENOME do aluno:\n");
 			fflush(stdin);
-			gets((*auxiliar).nome);
-			
-			verdadeiro = !camposVazios((*auxiliar).nome);
+			//gets(user->nome);
+			scanf("%s", &user->nome );
+			//printf("%s", user->nome );
+		
+			verdadeiro = !camposVazios(auxiliar->nome);
 			
 			if(!verdadeiro){
 				printf("\nO NOME NAO PODE FICAR EM BRANCO\n");
@@ -85,8 +88,7 @@ int camposVazios(char *str) {
 	char *auxiliar;
 	
 	auxiliar = str;
-	
-	for(i = 0; *(auxiliar) != '\0'; i++) {
+		for(i = 0; *(auxiliar) != '\0'; i++) {
 		if(*(auxiliar) != ' ') {
 			return 0;
 		}
