@@ -14,6 +14,7 @@ int main(){
 void menuPrincipal(int tam){
 	Usuario* p_User;
 	int op, x = 0; //op = opção
+	String str = new;
 	do{
 		system("cls");
 		printf("\n+--------------INFORME UMA OPCAO--------------+");
@@ -47,9 +48,9 @@ void menuPrincipal(int tam){
 Usuario *cadastroAluno(int tam){
 	Usuario *user;
 	Usuario *auxiliar;
-	int i;
+	int i, x, y;
 	int verdadeiro;	
-	//String str = new;
+	String str = new;
 	
 	user = (Usuario*) malloc(tam*sizeof(Usuario));
 	if(user==NULL){
@@ -73,15 +74,22 @@ Usuario *cadastroAluno(int tam){
 			verdadeiro = !camposVazios(auxiliar->nome);
 			
 			if(!verdadeiro){
-				printf("\nO NOME NAO PODE FICAR EM BRANCO\n");
+				printf("\nAtencao! O nome deve ser preenchido\n");
 			}
 			
 		}while(!verdadeiro);
 		
 		do {
 			verdadeiro = 1;
-			printf("\nInforme o endereco (separando o numero por virgula(,))\n");
+			printf("\nInforme o endereco e numero (Separandos por virgula (,))\n");
 			gets(user->endereco);
+			
+			if(camposVazios((*auxiliar).endereco)) {
+				printf("\nAtencao! O endereco deve ser preenchido!\n");
+				verdadeiro = 0;
+			}
+
+			y = str.firstIndexOf((*auxiliar).endereco, ',');
 	
 		}while(!verdadeiro);
 
@@ -89,7 +97,7 @@ Usuario *cadastroAluno(int tam){
 			printf("\nInforme a DATA de NASCIMENTO do aluno:\n");
 			fflush(stdin);
 			gets(user->dtNasc);
-			printf("%s", user->dtNasc);
+			//printf("%s", user->dtNasc);
 			x = validarData(user->dtNasc);	
 		} while (x==1);
 	
