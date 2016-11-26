@@ -145,13 +145,11 @@ int validarData (char *data){
  	 }
   
   else if ((equalsIgnoreCase(data,"/")) == 1){
-  	printf("parou aqui 2 - equals /");
   return 1;
   data_aux = data;
   data_aux = data +5;
   }
   else if ((equalsIgnoreCase(data,"/")) ==1) {
-	printf("parou aqui 3 - equals /");
   return 1;
   }
 
