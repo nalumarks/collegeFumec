@@ -127,13 +127,13 @@ int validarData (char *data){
  	 }
   
   else if ((equalsIgnoreCase(data,"/")) == 1){
-  	printf("parou aqui 1 - equals /");
+  	printf("parou aqui 2 - equals /");
   return 1;
   data_aux = data;
   data_aux = data +5;
   }
   else if ((equalsIgnoreCase(data,"/")) ==1) {
-	printf("parou aqui 2 - equals /");
+	printf("parou aqui 3 - equals /");
   return 1;
   }
 
@@ -159,7 +159,7 @@ int validarData (char *data){
          return 1;	
 	}
 
-	if ((dia >= 0 && dia <= 31) && (mes >= 0 && mes <= 12) && (ano >= 2000 && ano <= 2050)){			
+	if ((dia >= 0 && dia <= 31) && (mes >= 0 && mes <= 12) && (ano >= 1900 && ano <= 2050)){			
             if ((dia == 29 && mes == 2) && ((ano % 4) == 0)){
                 return 1;
             }
@@ -176,5 +176,5 @@ int validarData (char *data){
             {
                 return 0;
             }
-      }
- }
+      } 
+ } 
