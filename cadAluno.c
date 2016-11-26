@@ -155,11 +155,11 @@ int validarData (char *data){
          return 1;
 	}
 	
-	if (ano < 2000 || ano > 2050){
+	if (ano < 1900 || ano > 2016){
          return 1;	
 	}
 
-	if ((dia >= 0 && dia <= 31) && (mes >= 0 && mes <= 12) && (ano >= 1900 && ano <= 2050)){			
+	if ((dia >= 0 && dia <= 31) && (mes >= 0 && mes <= 12) && (ano >= 1900 && ano <= 2016)){			
             if ((dia == 29 && mes == 2) && ((ano % 4) == 0)){
                 return 1;
             }
