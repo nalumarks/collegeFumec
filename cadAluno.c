@@ -2,7 +2,7 @@
 int main(){
 	int tamanho;
 	
-	printf("Informe a quantidade de alunos a serem cadastrados:\n");
+	printf("Informe a quantidade de alunos a ser cadastrados:\n");
 	scanf("%d", &tamanho);
 	
 	menuPrincipal(tamanho);
@@ -14,7 +14,7 @@ int main(){
 void menuPrincipal(int tam){
 	Usuario* p_User;
 	int op, x = 0; //op = opção
-	String str = new;
+
 	do{
 		system("cls");
 		printf("\n+--------------INFORME UMA OPCAO--------------+");
@@ -145,11 +145,13 @@ int validarData (char *data){
  	 }
   
   else if ((equalsIgnoreCase(data,"/")) == 1){
+  	printf("parou aqui 2 - equals /");
   return 1;
   data_aux = data;
   data_aux = data +5;
   }
   else if ((equalsIgnoreCase(data,"/")) ==1) {
+	printf("parou aqui 3 - equals /");
   return 1;
   }
 
@@ -194,62 +196,3 @@ int validarData (char *data){
             }
       } 
  } 
-
-char *getPrimLetra (Usuario *usuario){
-	char *letra;
-	char *aux;
-	
-	letra = (char*) malloc(sizeof(char));
-	if(letra==NULL){
-		printf("Alocacao nao realizada");
-		exit(1);
-	}
-	
-	aux = letra;
-	*aux = substring(usuario->nome,0,1);
-	
-	return aux;
-}
-
-char * getUltLetra (Usuario usuario){
-	char *letra;
-	char *aux;
-	int tamanho;
-	
-	letra = (char*) malloc(sizeof(char));
-	if(letra==NULL){
-		printf("Alocacao nao realizada");
-		exit(1);
-	}	
-	aux = letra;
-	tamanho = lenght(usuario->nome)-1;
-	*aux = substring(usuario->nome,tamanho,tamanho+1);
-	
-	return aux;
-}
-
-char *getAno(Usuario usuario){
-	char *p;
-
-	p = a->data;
-	p = p + 6;
-	
-	return p;		
-}
-
-char *getSeqMatr(Usuario usuario){
-	char *aux;	
-}
-
-char *gerarCodMatricula (Usuario usuario){
-	char *primLetra, char *UltLetra, char *ano, char codSeq;
-	char *codMatricula;
-	char aux;
-	
-	codMatricula = codMatricula = getPrimLetra(usuario);
-	codMatricula = codMatricula +1 = getUltLetra(usuario);
-	codMatricula = codMatricula +2 = getAno(usuario);
-	codMatricula = codMatricula +6 = getSeqMatr(usuario);
-}
-
-
