@@ -21,6 +21,7 @@ void menuPrincipal(int tam);
 Usuario *cadastroAluno(int tam);
 int camposVazios(char *str);
 int validarData (char *data);
+
 //preencher depois que a pesquisa estiver pronta
 void buscarNumeroCasa();
 void buscarSobrenome();
