@@ -8,14 +8,11 @@ int equals(char *string, char *string_aux){
 	int count;
 	char *aux;
 	char *aux_ptr;
-
 	aux = string;
 	aux_ptr = string_aux;
-
 	if(length(string) != length(string_aux)){
 	return 1; 
 	}
-
 	for(count = 0; count < length(string); count++) 
 	{
 		if((int)*aux != (int)*aux_ptr){
@@ -23,7 +20,6 @@ int equals(char *string, char *string_aux){
 		}
 		aux++;
 		aux_ptr++;
-
 	}
 	return 0;
 }
@@ -86,7 +82,7 @@ char *substring(char *nome, int posInicial, int posFinal){
 	
 }
 
-int lenght(char *nome){		
+int length(char *nome){		
 
 	int tamanho;
 	for(tamanho=0; *nome!='\0';tamanho++){
@@ -125,6 +121,7 @@ int firstIndexOf(char *frase,char i){
 	return x;
 }
 
+/*
 int length( char *frase){
 	int tamanho=0;
 
@@ -134,6 +131,7 @@ int length( char *frase){
 	}
 	return tamanho;
 }
+*/
 
 int lastIndexOf(char *frase,char i){
 	int y=length(frase)-1;
