@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 //ANNA
-/*
+
 int equals(char *string, char *string_aux){
 	int count;
 	char *aux;
@@ -23,7 +23,16 @@ int equals(char *string, char *string_aux){
 	}
 	return 0;
 }
-*/
+
+int length(char *nome){		
+
+	int tamanho;
+	for(tamanho=0; *nome!='\0';tamanho++){
+		nome++;
+	}
+	return tamanho;
+}
+
 int equalsIgnoreCase(char *string, char *string_aux){
 	int count;
 	char *aux;
@@ -82,15 +91,6 @@ char *substring(char *nome, int posInicial, int posFinal){
 	
 }
 
-int length(char *nome){		
-
-	int tamanho;
-	for(tamanho=0; *nome!='\0';tamanho++){
-		nome++;
-	}
-	return tamanho;
-}
-
 //CAROL 
 
 //louise 
@@ -120,18 +120,6 @@ int firstIndexOf(char *frase,char i){
 	}
 	return x;
 }
-
-/*
-int length( char *frase){
-	int tamanho=0;
-
-	
-	for(tamanho=0; *frase;tamanho++){
-		frase++;
-	}
-	return tamanho;
-}
-*/
 
 int lastIndexOf(char *frase,char i){
 	int y=length(frase)-1;
