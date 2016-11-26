@@ -110,3 +110,71 @@ int camposVazios(char *str) {
 	return 1;
 }
 
+int validarData (char *data){
+	
+	int dia, mes, ano;
+    int i; 
+    char *data_aux;    
+    char *fimPonteiro; 
+    char *aux_mes;
+    char * aux_ano;
+    
+	data_aux = data;
+	
+	if ((length(data_aux) != 10) || (equalsIgnoreCase(data_aux," ")) ==1){ 
+	return 1;
+	data_aux = data_aux+2;
+ 	 }
+  
+  else if ((equalsIgnoreCase(data,"/")) == 1){
+  	printf("parou aqui 1 - equals /");
+  return 1;
+  data_aux = data;
+  data_aux = data +5;
+  }
+  else if ((equalsIgnoreCase(data,"/")) ==1) {
+	printf("parou aqui 2 - equals /");
+  return 1;
+  }
+
+	data_aux = data;
+	substring(data_aux,0,2);
+	dia = strtol(data_aux, &fimPonteiro,10);	
+	
+	aux_mes = substring(data_aux,3,4);
+	mes = strtol(aux_mes, &fimPonteiro,10);
+	
+	aux_ano = substring(data_aux,6,10);
+	ano = strtol(aux_ano, &fimPonteiro,10);
+
+	if (dia < 0 || dia >31){
+         return 1;	
+	}
+	
+	if ((mes < 0) ||(mes > 12)){
+         return 1;
+	}
+	
+	if (ano < 2000 || ano > 2050){
+         return 1;	
+	}
+
+	if ((dia >= 0 && dia <= 31) && (mes >= 0 && mes <= 12) && (ano >= 2000 && ano <= 2050)){			
+            if ((dia == 29 && mes == 2) && ((ano % 4) == 0)){
+                return 1;
+            }
+            if (dia > 28 && mes == 2){
+                return 1;
+            }
+            if ((dia > 30) && (mes == 4 || mes == 6 || mes == 9 || mes == 11)){
+                return 1;
+            }
+            if ((dia >31) && (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes ==8 || mes == 10 || mes == 12)){
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+      }
+ }
