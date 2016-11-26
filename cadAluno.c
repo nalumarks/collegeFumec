@@ -43,7 +43,7 @@ void menuPrincipal(int tam){
 		system("pause");
 	}while (op !=0);
 	
-}//fim menu principal
+}
 
 Usuario *cadastroAluno(int tam){
 	Usuario *user;
@@ -95,9 +95,9 @@ Usuario *cadastroAluno(int tam){
 				printf("\nAtencao! Endereco e numero devem ser separados por virgula\n");
 				verdadeiro = 0;
 			}	
+				
 			
-	
-		}while(!verdadeiro);
+			}while(!verdadeiro);
 
 		do{
 			printf("\nInforme a DATA de NASCIMENTO do aluno:\n");
@@ -196,3 +196,4 @@ int validarData (char *data){
             }
       } 
  } 
+ 
