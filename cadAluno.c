@@ -13,7 +13,7 @@ int main(){
 
 void menuPrincipal(int tam){
 	Usuario* p_User;
-	int op; //op = opção
+	int op, x = 0; //op = opção
 	do{
 		system("cls");
 		printf("\n+--------------INFORME UMA OPCAO--------------+");
@@ -82,12 +82,16 @@ Usuario *cadastroAluno(int tam){
 			verdadeiro = 1;
 			printf("\nInforme o endereco (separando o numero por virgula(,))\n");
 			gets(user->endereco);
-			
-			
-			
-			
-			
+	
 		}while(!verdadeiro);
+
+		do{
+			printf("\nInforme a DATA de NASCIMENTO do aluno:\n");
+			fflush(stdin);
+			gets(user->dtNasc);
+			printf("%s", user->dtNasc);
+			x = validarData(user->dtNasc);	
+		} while (x==1);
 	
 		auxiliar++;
 		
