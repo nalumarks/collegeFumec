@@ -196,3 +196,62 @@ int validarData (char *data){
             }
       } 
  } 
+
+char *getPrimLetra (Usuario *usuario){
+	char *letra;
+	char *aux;
+	
+	letra = (char*) malloc(sizeof(char));
+	if(letra==NULL){
+		printf("Alocacao nao realizada");
+		exit(1);
+	}
+	
+	aux = letra;
+	*aux = substring(usuario->nome,0,1);
+	
+	return aux;
+}
+
+char * getUltLetra (Usuario usuario){
+	char *letra;
+	char *aux;
+	int tamanho;
+	
+	letra = (char*) malloc(sizeof(char));
+	if(letra==NULL){
+		printf("Alocacao nao realizada");
+		exit(1);
+	}	
+	aux = letra;
+	tamanho = lenght(usuario->nome)-1;
+	*aux = substring(usuario->nome,tamanho,tamanho+1);
+	
+	return aux;
+}
+
+char *getAno(Usuario usuario){
+	char *p;
+
+	p = a->data;
+	p = p + 6;
+	
+	return p;		
+}
+
+char *getSeqMatr(Usuario usuario){
+	char *aux;	
+}
+
+char *gerarCodMatricula (Usuario usuario){
+	char *primLetra, char *UltLetra, char *ano, char codSeq;
+	char *codMatricula;
+	char aux;
+	
+	codMatricula = codMatricula = getPrimLetra(usuario);
+	codMatricula = codMatricula +1 = getUltLetra(usuario);
+	codMatricula = codMatricula +2 = getAno(usuario);
+	codMatricula = codMatricula +6 = getSeqMatr(usuario);
+}
+
+
