@@ -6,15 +6,15 @@
 // #ifndef STRING
 //	#define STRING
 	
-int length(char *str);
-int firstIndexOf(char *str, char str_at);
-int lastIndexOf(char *str, char str_at);
-int equals(char *str, char *str_cmp);
-void toUpperCase(char *str);
-void toLowerCase(char *str);
-char *replace(char *str, char str_old, char str_new);
-char *substring(char *str, int primeiro, int ultimo);
-int equalsIgnoreCase(char *str, char *str_cmp);
+int length(char *nome);
+int firstIndexOf(char *frase,char i);
+int lastIndexOf(char *frase,char i);
+int equals(char *string, char *string_aux);
+void toUpperCase(char * string);
+void toLowerCase(char * string);
+char *replace(char *string, char str1, char str2);
+char *substring(char *nome, int posInicial, int posFinal);
+int equalsIgnoreCase(char *string, char *string_aux);
 
 	typedef struct {
 		int   (*length)(char*);
