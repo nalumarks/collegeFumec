@@ -2,7 +2,7 @@
 int main(){
 	int tamanho;
 	
-	printf("Informe a quantidade de alunos a ser cadastrados:\n");
+	printf("Informe a quantidade de alunos a serem cadastrados:\n");
 	scanf("%d", &tamanho);
 	
 	menuPrincipal(tamanho);
