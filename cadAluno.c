@@ -91,6 +91,12 @@ Usuario *cadastroAluno(int tam){
 
 			y = str.firstIndexOf((*auxiliar).endereco, ',');
 	
+			if(y <= 0) {
+				printf("\nAtencao! Endereco e numero devem ser separados por virgula\n");
+				verdadeiro = 0;
+			}	
+			
+	
 		}while(!verdadeiro);
 
 		do{
