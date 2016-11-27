@@ -111,14 +111,16 @@ char *replace(char *string, char str1, char str2){
 
 //gustavo
 int firstIndexOf(char *frase,char i){
-	int x;
-	for( x=0;*frase;x++){
-		if(i==*frase){
-			break;
-		}
-		frase++;
-	}
-	return x;
+	char *aux = frase;
+    int index = 0;
+    while(*aux != '\0'){
+        if(*aux == i){
+            return index;
+        }
+        index++;
+        aux++;
+    }
+    return -1;
 }
 
 int lastIndexOf(char *frase,char i){
