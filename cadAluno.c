@@ -19,7 +19,8 @@ void menuPrincipal(int tam){
 		system("cls");
 		printf("\n+--------------INFORME UMA OPCAO--------------+");
 		printf("\n+---------------------------------------------+");
-		printf("\n|  (1) - CADASTRAR USUARIO                     |");
+		printf("\n|  (1) - CADASTRAR USUARIO                    |");
+		printf("\n|  (2) - PESQUISAR SOBRENOME                  |");
 		printf("\n|  (0) - SAIR                                 |");
 		printf("\n+---------------------------------------------+");
 		
@@ -32,7 +33,11 @@ void menuPrincipal(int tam){
 			case 1 : { 
 				p_User = cadastroAluno(tam);
 				break;
-			}//fim case 1
+			}
+			case 2 :{
+				pesquisarSobreNome (p_User,tam);
+				break;
+			}
 			default:{
 				fflush(stdin);
 				printf("\n\nOpcao invalida! Por favor, informe outra opcao\n\n ");
@@ -196,4 +201,32 @@ int validarData (char *data){
             }
       } 
  } 
- 
+
+
+void pesquisarSobreNome (Usuario *user, int tam){
+	Usuario *auxiliar;
+	char sobrenome1 [100];
+	char sobrenome2 [100];
+	char sobrenomeInformado [100];
+	int y, i;
+	String str = new
+	
+	auxiliar = user;	
+	printf("\nInforme o SOBRENOME:\n");
+	fflush(stdin);
+	gets(sobrenomeInformado);
+				
+	y = str.lastIndexOf((*auxiliar).nome, ' ' + 1);			
+	for (i=0; i< tam; i++){
+		strcpy(sobrenome1, str.substring((*auxiliar).nome, y, length((*auxiliar).nome)));
+		if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){
+			
+			printf("\nNOME...........: %s",   (*auxiliar).nome);
+			printf("\nENDERECO.......: %s",   (*auxiliar).endereco);
+			printf("\nDATA NASCIMENTO: %s\n", (*auxiliar).dtNasc);	
+		}else {
+		 auxiliar++;	
+		}
+				
+		}
+	}
