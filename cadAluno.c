@@ -50,7 +50,7 @@ void menuPrincipal(int tam){
 				break;
 			}
 			case 5:{
-				pesquisarMatricula(p_User,tam);
+				pesquisarMatricula(p_User, tam);
 				break;
 			}
 			default:{
@@ -138,19 +138,11 @@ Usuario *cadastroAluno(int tam){
 		(*auxiliar).matricula[3] = (*auxiliar).dtNasc[7];
 		(*auxiliar).matricula[4] = (*auxiliar).dtNasc[8];
 		(*auxiliar).matricula[5] = (*auxiliar).dtNasc[9];
-		//(*auxiliar).matricula[6] = (*auxiliar).sequencial;
+		sprintf((*auxiliar).matricula + 6, "%d",(*auxiliar).sequencial);
 		
-		//for(j = 0; j< 8; j++){
-		//printf("\n MATRICULA: %c", (*auxiliar).matricula[j]);
-		//}
+		printf("\n MATRICULA: %s", (*auxiliar).matricula);
 		
-		printf("\nMATRICULA: %c", (*auxiliar).nome[0]);
-		printf("%c", (*auxiliar).nome[y-1]);
-		printf("%c", (*auxiliar).dtNasc[6]);
-		printf("%c", (*auxiliar).dtNasc[7]);
-		printf("%c", (*auxiliar).dtNasc[8]);
-		printf("%c \n", (*auxiliar).dtNasc[9]);
-		//printf("%d", (*auxiliar).sequencial);
+		
 		
 		auxiliar++;
 		
@@ -267,11 +259,12 @@ void pesquisarSobreNome (Usuario *user, int tam){
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);
 			printf("\n\n+-------------------------------------------------+\n\n");
 		}else {
-		printf("\n\nUsuario nao encontrado!\n\n");
+		printf("\n\nUsuario nao encontrado\n\n!");
 		 auxiliar++;	
-		}				
+		}
+				
+		}
 	}
-}
 	
 /*	
 char gerarMatricula(Usuario *user, int tam){
@@ -318,11 +311,12 @@ void pesquisarMesNasc (Usuario *user, int tam){
 			printf("\nENDERECO: %s",   			(*auxiliar).endereco);
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);	
 		}else {
-			printf("Usuario nao encontrado!\n\n");
+			printf("Usuario nao encontrado\n\n!");
 		 auxiliar++;	
 		}
-	}
-}	
+				
+		}
+	}	
 	
 void pesquisarAnoNasc (Usuario *user, int tam){
 	Usuario *auxiliar;
@@ -345,12 +339,13 @@ void pesquisarAnoNasc (Usuario *user, int tam){
 			printf("\nENDERECO: %s",   			(*auxiliar).endereco);
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);	
 		}else {
-			printf("Usuario nao encontrado!\n\n");
+			printf("Usuario nao encontrado\n\n!");
 		 auxiliar++;	
-		}			
-	}
-}	
-
+		}
+				
+		}
+	}	
+	
 void pesquisarMatricula (Usuario *user, int tam){
 	Usuario *auxiliar;
 	char matBusca[8];
@@ -372,4 +367,4 @@ void pesquisarMatricula (Usuario *user, int tam){
 		printf("Usuario nao encontrado!\n\n");
 		auxiliar++;	
 	}			
-}
+}	
