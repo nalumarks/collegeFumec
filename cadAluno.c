@@ -278,3 +278,31 @@ char gerarMatricula(Usuario *user, int tam){
 			
 }
 */
+
+void pesquisarAnoNasc (Usuario *user, int tam){
+	Usuario *auxiliar;
+	char anoNasc[4];
+	char anoNascBusca[4];
+	int y, i;
+	String str = new
+	
+	auxiliar = user;	
+	printf("\nInforme o ANO DE NASCIMENTO: \n");
+	fflush(stdin);
+	gets(anoNascBusca);
+				
+	y = str.lastIndexOf((*auxiliar).dtNasc, '/' );		
+	for (i=0; i< tam; i++){
+		strcpy(anoNasc, str.substring((*auxiliar).dtNasc, (y + 1), length((*auxiliar).dtNasc))) ;
+		if (str.equalsIgnoreCase(anoNasc,anoNascBusca)){
+			
+			printf("\nNOME: %s",   				(*auxiliar).nome);
+			printf("\nENDERECO: %s",   			(*auxiliar).endereco);
+			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);	
+		}else {
+			printf("Usuario nao encontrado\n\n!");
+		 auxiliar++;	
+		}
+				
+		}
+	}	
