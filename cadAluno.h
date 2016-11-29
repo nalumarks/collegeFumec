@@ -27,7 +27,7 @@ void pesquisarSobreNome (Usuario *user, int tam);
 char gerarCod(Usuario *user, int tam);
 void pesquisarAnoNasc (Usuario *user, int tam);
 void pesquisarMesNasc (Usuario *user, int tam);
-
+void pesquisarMatricula (Usuario *user, int tam);
 #ifndef WINDOWS
 	#define WINDOWS
 #endif
