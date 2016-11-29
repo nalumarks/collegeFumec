@@ -220,10 +220,9 @@ void pesquisarSobreNome (Usuario *user, int tam){
 	fflush(stdin);
 	gets(sobrenomeInformado);
 				
-	y = str.lastIndexOf((*auxiliar).nome, ' ' + 1);		
-	printf("%d", y);
+	y = str.lastIndexOf((*auxiliar).nome, ' ' );		
 	for (i=0; i< tam; i++){
-		strcpy(sobrenome1, str.substring((*auxiliar).nome, y, length((*auxiliar).nome)));
+		strcpy(sobrenome1, str.substring((*auxiliar).nome, (y + 1), length((*auxiliar).nome))) ;
 		if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){
 			
 			printf("\nNOME: %s",   (*auxiliar).nome);
