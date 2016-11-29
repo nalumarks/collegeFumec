@@ -23,6 +23,7 @@ void menuPrincipal(int tam){
 		printf("\n|  (2) - PESQUISAR SOBRENOME                  |");
 		printf("\n|  (3) - PESQUISAR MES NASCIMENTO             |");
 		printf("\n|  (4) - PESQUISAR ANO NASCIMENTO             |");
+		printf("\n|  (5) - PESQUISAR MATRICULA                  |");
 		printf("\n|  (0) - SAIR                                 |");
 		printf("\n+---------------------------------------------+");
 		
@@ -46,6 +47,10 @@ void menuPrincipal(int tam){
 			}
 			case 4:{
 				pesquisarAnoNasc(p_User,tam);
+				break;
+			}
+			case 5:{
+				pesquisarMatricula(p_User,tam);
 				break;
 			}
 			default:{
@@ -262,12 +267,11 @@ void pesquisarSobreNome (Usuario *user, int tam){
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);
 			printf("\n\n+-------------------------------------------------+\n\n");
 		}else {
-		printf("\n\nUsuario nao encontrado\n\n!");
+		printf("\n\nUsuario nao encontrado!\n\n");
 		 auxiliar++;	
-		}
-				
-		}
+		}				
 	}
+}
 	
 /*	
 char gerarMatricula(Usuario *user, int tam){
@@ -314,12 +318,11 @@ void pesquisarMesNasc (Usuario *user, int tam){
 			printf("\nENDERECO: %s",   			(*auxiliar).endereco);
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);	
 		}else {
-			printf("Usuario nao encontrado\n\n!");
+			printf("Usuario nao encontrado!\n\n");
 		 auxiliar++;	
 		}
-				
-		}
-	}	
+	}
+}	
 	
 void pesquisarAnoNasc (Usuario *user, int tam){
 	Usuario *auxiliar;
@@ -342,9 +345,31 @@ void pesquisarAnoNasc (Usuario *user, int tam){
 			printf("\nENDERECO: %s",   			(*auxiliar).endereco);
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);	
 		}else {
-			printf("Usuario nao encontrado\n\n!");
+			printf("Usuario nao encontrado!\n\n");
 		 auxiliar++;	
-		}
+		}			
+	}
+}	
+
+void pesquisarMatricula (Usuario *user, int tam){
+	Usuario *auxiliar;
+	char matBusca[8];
+	char matricula[8];
+	int i;
+	String str = new
+	
+	auxiliar = user;	
+	printf("\nInforme a MATRICULA: \n");
+	fflush(stdin);
+	gets(matBusca);
 				
-		}
-	}	
+	if (str.equals(matricula,matBusca)){
+			
+		printf("\nNOME: %s",   				(*auxiliar).nome);
+		printf("\nENDERECO: %s",   			(*auxiliar).endereco);
+		printf("\nDATA NASCIMENTO: %s\n\n",             (*auxiliar).dtNasc);	
+	}else {
+		printf("Usuario nao encontrado!\n\n");
+		auxiliar++;	
+	}			
+}
