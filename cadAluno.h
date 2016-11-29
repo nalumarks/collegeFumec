@@ -25,12 +25,8 @@ int camposVazios(char *str);
 int validarData (char *data);
 void pesquisarSobreNome (Usuario *user, int tam);
 char gerarCod(Usuario *user, int tam);
-//preencher depois que a pesquisa estiver pronta
-void buscarNumeroCasa();
-void buscarSobrenome();
-void buscarAnoNascimento();
-void buscarUsuarioMesNascimento();
-void buscarMatricula();
+void pesquisarAnoNasc (Usuario *user, int tam);
+void pesquisarMesNasc (Usuario *user, int tam);
 
 #ifndef WINDOWS
 	#define WINDOWS
