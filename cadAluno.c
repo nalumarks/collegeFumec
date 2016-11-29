@@ -113,10 +113,10 @@ Usuario *cadastroAluno(int tam){
 			//printf("%s", user->dtNasc);
 			x = validarData(user->dtNasc);	
 		} while (x==1);
-		(*auxiliar).sequencial = i++;
+		(*auxiliar).sequencial = i+1;
 		
 		//gerar matricula
-		y = str.lastIndexOf((*auxiliar).nome, '/0');
+		y = str.lastIndexOf((*auxiliar).nome, '\0');
 		(*auxiliar).matricula[0] = (*auxiliar).nome[0];
 		(*auxiliar).matricula[1] = (*auxiliar).nome[y-1];
 		(*auxiliar).matricula[2] = (*auxiliar).dtNasc[6];
@@ -125,9 +125,9 @@ Usuario *cadastroAluno(int tam){
 		(*auxiliar).matricula[5] = (*auxiliar).dtNasc[9];
 		(*auxiliar).matricula[6] = (*auxiliar).sequencial;
 		
-		//for(j = 0; j< 8; j++){
-		printf("%c", (*auxiliar).nome[y]);	
-		//}
+		for(j = 0; j< 8; j++){
+		printf("%c", (*auxiliar).matricula[j]);
+		}
 		auxiliar++;
 		
 	}
@@ -241,6 +241,7 @@ void pesquisarSobreNome (Usuario *user, int tam){
 			printf("\nENDERECO: %s",   (*auxiliar).endereco);
 			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);	
 		}else {
+			printf("Usuario nao encontrado\n\n!");
 		 auxiliar++;	
 		}
 				
