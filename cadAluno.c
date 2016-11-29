@@ -54,6 +54,7 @@ Usuario *cadastroAluno(int tam){
 	Usuario *user;
 	Usuario *auxiliar;
 	int i, x, y;
+	int cont;
 	int verdadeiro;	
 	String str = new;
 	
@@ -87,6 +88,7 @@ Usuario *cadastroAluno(int tam){
 		do {
 			verdadeiro = 1;
 			printf("\nInforme o endereco e numero (Separandos por virgula (,))\n");
+			fflush(stdin);
 			gets(user->endereco);
 			
 			if(camposVazios((*auxiliar).endereco)) {
@@ -111,7 +113,9 @@ Usuario *cadastroAluno(int tam){
 			//printf("%s", user->dtNasc);
 			x = validarData(user->dtNasc);	
 		} while (x==1);
-	
+		//cont = (*auxiliar).sequencial + 1;
+		
+		//printf("%c", gerarCod(auxiliar, tam));
 		auxiliar++;
 		
 	}
@@ -216,13 +220,14 @@ void pesquisarSobreNome (Usuario *user, int tam){
 	fflush(stdin);
 	gets(sobrenomeInformado);
 				
-	y = str.lastIndexOf((*auxiliar).nome, ' ' + 1);			
+	y = str.lastIndexOf((*auxiliar).nome, ' ' + 1);		
+	printf("%d", y);
 	for (i=0; i< tam; i++){
 		strcpy(sobrenome1, str.substring((*auxiliar).nome, y, length((*auxiliar).nome)));
 		if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){
 			
-			printf("\nNOME...........: %s",   (*auxiliar).nome);
-			printf("\nENDERECO.......: %s",   (*auxiliar).endereco);
+			printf("\nNOME: %s",   (*auxiliar).nome);
+			printf("\nENDERECO: %s",   (*auxiliar).endereco);
 			printf("\nDATA NASCIMENTO: %s\n", (*auxiliar).dtNasc);	
 		}else {
 		 auxiliar++;	
@@ -230,3 +235,26 @@ void pesquisarSobreNome (Usuario *user, int tam){
 				
 		}
 	}
+	
+/*	
+char gerarCod(Usuario *user, int tam){
+	Usuario *auxiliar;	
+	auxiliar = user;
+	char matricula[8];
+	int i, y;
+	String str = new;
+	
+	for(i = 0; i < tam; i++){
+		y = str.lastIndexOf((*auxiliar).nome, '/0' - 1);
+		matricula[0] = (*auxiliar).nome[0];
+		matricula[1] = (*auxiliar).nome[y];
+		matricula[2] = (*auxiliar).dtNasc[6];
+		matricula[3] = (*auxiliar).dtNasc[7];
+		matricula[4] = (*auxiliar).dtNasc[8];
+		matricula[5] = (*auxiliar).dtNasc[9];
+		matricula[6] = (*auxiliar).sequencial[0];
+		}
+	return matricula;
+		
+}
+*/
