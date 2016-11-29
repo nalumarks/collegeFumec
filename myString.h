@@ -1,7 +1,3 @@
-#ifndef new
-	#define new {.length=length, .equals=equals, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring,.toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
-#endif
-
 #include "myString.c"
 // #ifndef STRING
 //	#define STRING
@@ -28,3 +24,7 @@ int equalsIgnoreCase(char *string, char *string_aux);
 		int   (*firstIndexOf)(char*, char);
 	
 	}String;
+	
+#ifndef new
+#define new {.length=length, .equals=equals, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring,.toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
+#endif
