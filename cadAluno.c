@@ -89,7 +89,7 @@ Usuario *cadastroAluno(int tam){
 			verdadeiro = 1;
 			printf("\nInforme o endereco e numero (Separandos por virgula (,))\n");
 			fflush(stdin);
-			gets(user->endereco);
+			gets(auxiliar->endereco);
 			
 			if(camposVazios((*auxiliar).endereco)) {
 				printf("\nAtencao! O endereco deve ser preenchido!\n");
@@ -109,9 +109,9 @@ Usuario *cadastroAluno(int tam){
 		do{
 			printf("\nInforme a DATA de NASCIMENTO do aluno:\n");
 			fflush(stdin);
-			gets(user->dtNasc);
+			gets(auxiliar->dtNasc);
 			//printf("%s", user->dtNasc);
-			x = validarData(user->dtNasc);	
+			x = validarData(auxiliar->dtNasc);	
 		} while (x==1);
 		(*auxiliar).sequencial = i+1;
 		
@@ -125,9 +125,16 @@ Usuario *cadastroAluno(int tam){
 		(*auxiliar).matricula[5] = (*auxiliar).dtNasc[9];
 		(*auxiliar).matricula[6] = (*auxiliar).sequencial;
 		
-		for(j = 0; j< 8; j++){
-		printf("%c", (*auxiliar).matricula[j]);
-		}
+		//for(j = 0; j< 8; j++){
+		//printf("\n MATRICULA: %c", (*auxiliar).matricula[j]);
+		//}
+		printf("\nMATRICULA: %c", (*auxiliar).nome[0]);
+		printf("%c", (*auxiliar).nome[y-1]);
+		printf("%c", (*auxiliar).dtNasc[6]);
+		printf("%c", (*auxiliar).dtNasc[7]);
+		printf("%c", (*auxiliar).dtNasc[8]);
+		printf("%c", (*auxiliar).dtNasc[9]);
+		printf("%d", (*auxiliar).sequencial);
 		auxiliar++;
 		
 	}
