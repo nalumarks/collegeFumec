@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
+#define TRUE 1
+#define FALSE 0
+#define NOTFOUND -1
 //ANNA
 
 int equals(char *string, char *string_aux){
@@ -122,7 +124,7 @@ int firstIndexOf(char *frase,char i){
     }
     return -1;
 }
-
+/*
 int lastIndexOf(char *frase,char i){
 	int y=length(frase)-1;
 	frase = frase + (length(frase)-1);
@@ -134,7 +136,15 @@ int lastIndexOf(char *frase,char i){
 	}
 	return y;
 }
+*/
 
+int lastIndexOf(char *frase, char i){
+    char* pch = strrchr(frase, i);
+    if (pch == NULL) {
+        return NOTFOUND;
+    }
+    return pch - frase;
+}
 // Thaíza
 
 void toUpperCase(char * string){
