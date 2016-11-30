@@ -13,7 +13,7 @@ int main(){
 
 void menuPrincipal(int tam){
     Usuario* p_listaUsuario = (Usuario*) malloc(tam*sizeof(Usuario));
-    int op, x = 1; //op = opção
+    int op, x = 0; //op = opção
 
     do{
         system("cls");
@@ -218,12 +218,12 @@ int validarData (char *data){
 
 
 void pesquisarSobreNome (Usuario *user, int tam){
-    char sobrenome1 [100];
-    char sobrenomeInformado [100];
+    char sobrenome1 [101];
+    char sobrenomeInformado [101];
     int y, i;
     String str = new
 
-        printf("\nInforme o SOBRENOME:\n");
+    printf("\nInforme o SOBRENOME:\n");
     fflush(stdin);
     gets(sobrenomeInformado);
 
@@ -269,30 +269,30 @@ void pesquisarSobreNome (Usuario *user, int tam){
    */
 
 void pesquisarMesNasc (Usuario *user, int tam){
-    char mes[2];
-    char mesBusca[2];
-    int y, i;
+    char mes[3];
+    char mesBusca[3];
+    int y = 0, i;
+    int achou = 0;
     String str = new
 
     printf("\nInforme o MES DE NASCIMENTO: \n");
-    fflush(stdin);
-    gets(mesBusca);
+    scanf("%s", mesBusca);
 
-    y = str.firstIndexOf((*user).dtNasc, '/' );
     for (i=0; i< tam; i++){
+        y = str.firstIndexOf((*user).dtNasc, '/' );
         strcpy(mes, str.substring((*user).dtNasc, (y + 1), (y + 3))) ;
         if (str.equals(mes,mesBusca)){
 
             printf("\nNOME: %s",   				(*user).nome);
             printf("\nENDERECO: %s",   			(*user).endereco);
             printf("\nDATA NASCIMENTO: %s\n\n", (*user).dtNasc);
-            return;
+            achou = 1;
         }
         user++;
-        
-
     }
-    printf("Usuario nao encontrado\n\n!");
+    if(!achou){
+        printf("Usuario nao encontrado\n\n!");
+    }
 }
 
 void pesquisarAnoNasc (Usuario *user, int tam){

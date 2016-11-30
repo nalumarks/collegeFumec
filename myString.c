@@ -15,26 +15,9 @@ int length(char *nome){
 	return tamanho;
 }
 
-int equals(char *string, char *string_aux){
-	int count;
-	char *aux;
-	char *aux_ptr;
-	aux = string;
-	aux_ptr = string_aux;
-	if(length(string) != length(string_aux)){
-	return 1; 
-	}
-	for(count = 0; count < length(string); count++) 
-	{
-		if((int)*aux != (int)*aux_ptr){
-		return 1;  
-		}
-		aux++;
-		aux_ptr++;
-	}
-	return 0;
+int equals(char* str1, char* str2){
+    return TRUE ? !strcmp(str1, str2) : FALSE;
 }
-
 
 int equalsIgnoreCase(char *string, char *string_aux){
 	int count;
@@ -78,22 +61,15 @@ int equalsIgnoreCase(char *string, char *string_aux){
 }
 
 // CAROL SUBSTRING
-
-char *substring(char *nome, int posInicial, int posFinal){
-	int tamanho = (posFinal-posInicial)+1;
-	int i;
-	int posicao=posInicial;
-	char *novaString=(char *)malloc(tamanho);
-	
-	for(i = 0;i < tamanho; i++){
-		novaString[i] = nome[posicao];
-		posicao++;
-	}
-	
-	return novaString;
-	
+char* substring(char* str1, int ini, int fim){
+    char* sub = (char*)malloc(sizeof((fim - ini) + 1));
+    int i,j;
+    for (i = ini,j=0; i < fim; ++i, j++) {
+        sub[j] = str1[i];
+    }
+    sub[fim - ini] = '\0';
+    return sub;
 }
-
 //CAROL 
 
 //louise 
