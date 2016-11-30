@@ -45,7 +45,7 @@ void menuPrincipal(int tam){
                      pesquisarSobreNome (p_listaUsuario, x);
                      break;
             case 3:
-                     //pesquisarMesNasc(p_User,tam);
+                     pesquisarMesNasc(p_listaUsuario, x);
                      break;
             case 4:
                      //pesquisarAnoNasc(p_User,tam);
@@ -269,31 +269,30 @@ void pesquisarSobreNome (Usuario *user, int tam){
    */
 
 void pesquisarMesNasc (Usuario *user, int tam){
-    Usuario *auxiliar;
     char mes[2];
     char mesBusca[2];
     int y, i;
     String str = new
 
-        auxiliar = user;
     printf("\nInforme o MES DE NASCIMENTO: \n");
     fflush(stdin);
     gets(mesBusca);
 
-    y = str.firstIndexOf((*auxiliar).dtNasc, '/' );
+    y = str.firstIndexOf((*user).dtNasc, '/' );
     for (i=0; i< tam; i++){
-        strcpy(mes, str.substring((*auxiliar).dtNasc, (y + 1), (y + 3))) ;
+        strcpy(mes, str.substring((*user).dtNasc, (y + 1), (y + 3))) ;
         if (str.equals(mes,mesBusca)){
 
-            printf("\nNOME: %s",   				(*auxiliar).nome);
-            printf("\nENDERECO: %s",   			(*auxiliar).endereco);
-            printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);
-        }else {
-            printf("Usuario nao encontrado\n\n!");
-            auxiliar++;
+            printf("\nNOME: %s",   				(*user).nome);
+            printf("\nENDERECO: %s",   			(*user).endereco);
+            printf("\nDATA NASCIMENTO: %s\n\n", (*user).dtNasc);
+            return;
         }
+        user++;
+        
 
     }
+    printf("Usuario nao encontrado\n\n!");
 }
 
 void pesquisarAnoNasc (Usuario *user, int tam){
