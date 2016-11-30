@@ -129,6 +129,7 @@ void cadastroAluno(Usuario* lista, int indice){
     sprintf(user.matricula + 6, "%d", indice);
 
     printf("\n MATRICULA: %s", user.matricula);
+    lista[indice] = user;
 }
 
 int camposVazios(char *str) {
