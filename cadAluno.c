@@ -61,7 +61,7 @@ void menuPrincipal(int tam){
 		}//fim switch
 		system("pause");
 	}while (op !=0);
-
+    free(p_listaUsuario);
 }
 
 void cadastroAluno(Usuario* lista, int indice){
