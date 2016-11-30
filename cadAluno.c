@@ -13,7 +13,7 @@ int main(){
 
 void menuPrincipal(int tam){
     Usuario* p_listaUsuario = (Usuario*) malloc(tam*sizeof(Usuario));
-    int op, x = 0; //op = opção
+    int op, x = 1; //op = opção
 
     do{
         system("cls");
