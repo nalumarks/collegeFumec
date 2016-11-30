@@ -6,6 +6,15 @@
 #define NOTFOUND -1
 //ANNA
 
+int length(char *nome){		
+
+	int tamanho;
+	for(tamanho=0; *nome!='\0';tamanho++){
+		nome++;
+	}
+	return tamanho;
+}
+
 int equals(char *string, char *string_aux){
 	int count;
 	char *aux;
@@ -26,14 +35,6 @@ int equals(char *string, char *string_aux){
 	return 0;
 }
 
-int length(char *nome){		
-
-	int tamanho;
-	for(tamanho=0; *nome!='\0';tamanho++){
-		nome++;
-	}
-	return tamanho;
-}
 
 int equalsIgnoreCase(char *string, char *string_aux){
 	int count;

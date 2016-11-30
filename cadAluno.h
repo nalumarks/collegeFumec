@@ -20,7 +20,7 @@ typedef struct {
 
 void menuPrincipal(int tam);
 
-Usuario *cadastroAluno(int tam);
+void cadastroAluno(Usuario* lista, int indice);
 int camposVazios(char *str);
 int validarData (char *data);
 void pesquisarSobreNome (Usuario *user, int tam);
