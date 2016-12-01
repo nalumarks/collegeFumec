@@ -90,7 +90,7 @@ int lastIndexOf(char *frase, char i){
     }
     return pch - frase;
 }
-// Thaíza
+// ThaÃ­za
 
 void toUpperCase(char * string){
 	int tamanho, i;
