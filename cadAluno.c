@@ -131,7 +131,7 @@ void cadastroAluno(Usuario* lista, int indice){
     user.matricula[5] = user.dtNasc[9];
     sprintf(user.matricula + 6, "%d", indice);
 
-    printf("\n MATRICULA: %s", user.matricula);
+    printf("\n Matricula do aluno: %s", user.matricula);
     lista[indice] = user;
 }
 
@@ -235,10 +235,9 @@ void pesquisarSobreNome (Usuario *user, int tam){
         strcpy(sobrenome1, str.substring((*user).nome, (y + 1), length((*user).nome))) ;
         if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){
 
-            printf("\n\n+-------------- RESULTADO PESQUISA --------------+");
             printf("\nNOME: %s",   (*user).nome);
             printf("\nENDERECO: %s",   (*user).endereco);
-            printf("\nDATA NASCIMENTO: %s\n\n", (*user).dtNasc);
+            printf("\nDATA NASCIMENTO: %s", (*user).dtNasc);
             printf("\n\n+-------------------------------------------------+\n\n");
             return;
         }
