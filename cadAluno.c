@@ -81,7 +81,7 @@ void cadastroAluno(Usuario* lista, int indice){
     Usuario user;
     int i, x, y,j;
     int verdadeiro;
-    String str = new;
+    Biblioteca str = new;
 
     printf("\n\n+-------------- CADASTRO --------------+");
 
@@ -234,7 +234,7 @@ void pesquisarSobreNome (Usuario *user, int tam){
     char sobrenome1 [101];
     char sobrenomeInformado [101];
     int y, i;
-    String str = new
+    Biblioteca str = new
 
     printf("\nInforme o SOBRENOME:\n");
     fflush(stdin);
@@ -262,7 +262,7 @@ void pesquisarSobreNome (Usuario *user, int tam){
    auxiliar = user;
    char *matricula [8];
    int i, y;
-   String str = new;
+   Biblioteca str = new;
 
    for(i = 0; i < tam; i++){
    y = str.lastIndexOf((*auxiliar).nome, '/0' - 1);
@@ -285,7 +285,7 @@ void pesquisarMesNasc (Usuario *user, int tam){
     char mesBusca[3];
     int y = 0, i;
     int achou = 0;
-    String str = new
+    Biblioteca str = new
 
     printf("\nInforme o MES DE NASCIMENTO: \n");
     scanf("%s", mesBusca);
@@ -312,7 +312,7 @@ void pesquisarMesNasc (Usuario *user, int tam){
 /*     char anoNasc[4]; */
 /*     char anoNascBusca[4]; */
 /*     int y, i; */
-/*     String str = new */
+/*     Biblioteca str = new */
 
 /*         auxiliar = user; */
 /*     printf("\nInforme o ANO DE NASCIMENTO: \n"); */
@@ -340,7 +340,7 @@ void pesquisarMesNasc (Usuario *user, int tam){
 /*     char matBusca[8]; */
 /*     char matricula[8]; */
 /*     int i; */
-/*     String str = new */
+/*     Biblioteca str = new */
 
 /*         auxiliar = user; */
 /*     printf("\nInforme a MATRICULA: \n"); */
