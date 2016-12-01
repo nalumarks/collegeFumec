@@ -8,9 +8,9 @@ int lastIndexOf(char *frase,char i);
 int equals(char *string, char *string_aux);
 void toUpperCase(char * string);
 void toLowerCase(char * string);
-char *replace(char *string, char str1, char str2);
+void replace(char* str, char o, char c);
 char *substring(char *nome, int posInicial, int posFinal);
-int equalsIgnoreCase(char *string, char *string_aux);
+int equalsIgnoreCase(char* str1, char* str2);
 
 	typedef struct {
 		int   (*length)(char*);
@@ -19,7 +19,7 @@ int equalsIgnoreCase(char *string, char *string_aux);
 		char* (*substring)(char*, int, int);
 		void  (*toUpperCase)(char*);
 		void  (*toLowerCase)(char*);
-		char* (*replace)(char*, char, char);
+		void  (*replace)(char*, char, char);
 		int   (*lastIndexOf)(char*, char);
 		int   (*firstIndexOf)(char*, char);
 	
