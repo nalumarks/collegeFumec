@@ -35,45 +35,18 @@ int length(char *nome){
 	return tamanho;
 }
 
-int equalsIgnoreCase(char *string, char *string_aux){
-	int count;
-	char *aux;
-	char *aux_ptr;
-
-	aux = string;
-	aux_ptr = string_aux;
-
-	if(length(string) != length(string_aux)){
-	return 0; 
-	}
-
-	for(count = 0; count < length(string); count++){
-		if (((int)*aux >= 65 && (int)*aux <= 90) || ((int)*aux >= 97 && (int)*aux <= 122)){
-
-			if((int)*aux >= 65 && (int)*aux <= 90){
-				if((int)*aux != (int)*aux_ptr ){
-					if ((int)*aux  != ((int)*aux_ptr - 32)){
-						return 0;
-					}
-				}
-			}
-
-			if((int)*aux >= 97 && (int)*aux <= 122){
-				if((int)*aux != (int)*aux_ptr ){
-					if ((int)*aux   != ((int)*aux_ptr + 32)){
-						return 0;
-					}
-				}
-			}
-		} else {
-			if((int)*aux != (int)*aux_ptr){
-			 return 0;
-			}
-		}
-		aux++;
-		aux_ptr++;
-	}
-	return 1;
+int equalsIgnoreCase(char* str1, char* str2){
+    if (length(str1) != length(str2)){
+        return FALSE;
+    }
+    while(*str1 != '\0'){
+        if (tolower(*str1) != tolower(*str2)){
+            return FALSE;
+        }
+        str1++;
+        str2++;
+    }
+    return TRUE;
 }
 
 // CAROL SUBSTRING
@@ -96,19 +69,13 @@ char *substring(char *nome, int posInicial, int posFinal){
 //CAROL 
 
 //louise 
-char *replace(char *string, char str1, char str2){
-	int count;
-	char *aux;
-
-	aux = string;
-
-	for(count = 0; count < length(string); count++){
-		if(*aux == str1){
-			*aux = str2;
-		}
-		aux++;
-	}
-	return string;
+void replace(char* str, char o, char c){
+    while(*str != '\0'){
+        if (*str == o){
+            *str = c;
+        }
+        str++;
+    }
 }
 
 //gustavo
