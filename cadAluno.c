@@ -1,4 +1,15 @@
 #include "cadAluno.h"
+
+
+/*
+Alunos:
+Anna Luiza Marques
+Louise Duarte Bougleux
+Thaiza Harmonico
+Gustavo Hanssen
+Anna Carolina 
+*/
+
 int main(){
 	int tamanho;
 	
