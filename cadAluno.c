@@ -349,7 +349,7 @@ void pesquisarMesNasc (Usuario *user, int tam){
 /*     } */
 /* } */
 
-void listarUsuario(Usuario *user, int tam){
+void listarUsuarios(Usuario *user, int tam){
 	Usuario *auxiliar;
 	auxiliar = user;
 	int i;
