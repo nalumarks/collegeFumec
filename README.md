@@ -1,9 +1,11 @@
 # universidadeFumec
 
-Trabalho autoinstrucional realizado na Universidade Fumec (3ºPeriodo)
+Trabalho autoinstrucional realizado na Universidade Fumec (3ºPeriodo).
 
-Anna
-Louise
-Carol
-Thaisa
-Gustavo
+*Grupo:*
+
+* Anna
+* Louise
+* Carol
+* Thaisa
+* Gustavo
