@@ -138,7 +138,7 @@ Usuario *cadastroAluno(int tam){
 		(*auxiliar).matricula[5] = (*auxiliar).dtNasc[9];
 		sprintf((*auxiliar).matricula + 6, "%d",(*auxiliar).sequencial);
 		
-		printf("\n MATRICULA: %s", (*auxiliar).matricula);
+		printf("\nMatricula do Aluno: %s", (*auxiliar).matricula);
 		
 		
 		
@@ -248,12 +248,10 @@ void pesquisarSobreNome (Usuario *user, int tam){
 	y = str.lastIndexOf((*auxiliar).nome, ' ' );		
 	for (i=0; i< tam; i++){
 		strcpy(sobrenome1, str.substring((*auxiliar).nome, (y + 1), length((*auxiliar).nome))) ;
-		if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){
-			
-			printf("\n\n+-------------- RESULTADO PESQUISA --------------+");
-			printf("\nNOME: %s",   (*auxiliar).nome);
-			printf("\nENDERECO: %s",   (*auxiliar).endereco);
-			printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc);
+		if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){			
+		printf("\nnome: %s", (*auxiliar).nome);
+		printf("\nendereco: %s", (*auxiliar).endereco);
+		printf("\ndata nasc.: %s",(*auxiliar).dtNasc);
 		}else {
 		printf("\n\nUsuario nao encontrado\n\n!");
 		 auxiliar++;	
@@ -301,8 +299,7 @@ void pesquisarMesNasc (Usuario *user, int tam){
 	y = str.firstIndexOf((*auxiliar).dtNasc, '/' );		
 	for (i=0; i< tam; i++){
 		strcpy(mes, str.substring((*auxiliar).dtNasc, (y + 1), (y + 3))) ;
-		if ((mes == mesBusca)){
-			
+		if ((mes == mesBusca)){			
 		printf("\nnome: %s", (*auxiliar).nome);
 		printf("\nendereco: %s", (*auxiliar).endereco);
 		printf("\ndata nasc.: %s",(*auxiliar).dtNasc);	
@@ -329,12 +326,10 @@ void pesquisarAnoNasc (Usuario *user, int tam){
 	y = str.lastIndexOf((*auxiliar).dtNasc, '/' );		
 	for (i=0; i< tam; i++){
 		strcpy(anoNasc, str.substring((*auxiliar).dtNasc, (y + 1), length((*auxiliar).dtNasc))) ;
-		if (str.equalsIgnoreCase(anoNasc,anoNascBusca)){
-			
-		printf("\n\n+-------------- RESULTADO PESQUISA --------------+");	
+		if (str.equalsIgnoreCase(anoNasc,anoNascBusca)){			
 		printf("\nnome: %s", (*auxiliar).nome);
 		printf("\nendereco: %s", (*auxiliar).endereco);
-		printf("\ndata nasc.: %s\n\n",(*auxiliar).dtNasc);		
+		printf("\ndata nasc.: %s",(*auxiliar).dtNasc);			
 		}if(i <tam-1) {
 			printf("Usuario nao encontrado\n\n!");
 		 auxiliar++;	
@@ -357,10 +352,9 @@ void pesquisarMatricula (Usuario *user, int tam){
 	gets(matBusca);
 				
 	if (str.equals(matricula,matBusca)){
-		printf("\n\n+-------------- RESULTADO PESQUISA --------------+");	
 		printf("\nnome: %s", (*auxiliar).nome);
 		printf("\nendereco: %s", (*auxiliar).endereco);
-		printf("\ndata nasc.: %s\n\n",(*auxiliar).dtNasc);	
+		printf("\ndata nasc.: %s",(*auxiliar).dtNasc);	
 	}else {
 		printf("Usuario nao encontrado!\n\n");
 		auxiliar++;	
