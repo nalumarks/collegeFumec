@@ -11,20 +11,13 @@ typedef struct {
   	int sequencial;
   	char matricula[8];
 }Usuario;
-
-typedef struct {
-	int dia;
-	int mes;
-	int ano;
-}Data;
-
 void menuPrincipal(int tam);
 
 void cadastroAluno(Usuario* lista, int indice);
 int camposVazios(char *campos);
 int validarData (char *data);
 void pesquisarSobreNome (Usuario *user, int tam);
-char gerarCod(Usuario *user, int tam);
+//char gerarCod(Usuario *user, int tam);
 void pesquisarAnoNasc (Usuario *user, int tam);
 void pesquisarMesNasc (Usuario *user, int tam);
 void pesquisarMatricula (Usuario *user, int tam);
