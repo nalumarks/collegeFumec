@@ -23,7 +23,7 @@ int main(){
 
 void menuPrincipal(int tam){
     Usuario* p_listaUsuario = (Usuario*) malloc(tam*sizeof(Usuario));
-    int op, x = 0; //op = opção
+    int op, x = 0; //op = op
 
     do{
         system("cls");
@@ -58,10 +58,10 @@ void menuPrincipal(int tam){
                      pesquisarMesNasc(p_listaUsuario, x);
                      break;
             case 4:
-                     //pesquisarAnoNasc(p_User,tam);
+                     pesquisarAnoNasc(p_listaUsuario, x);
                      break;
             case 5:
-                     //pesquisarMatricula(p_User, tam);
+                     pesquisarMatricula(p_listaUsuario, x);
                      break;
             case 6:
                      listarUsuarios(p_listaUsuario, x);
@@ -139,9 +139,9 @@ void cadastroAluno(Usuario* lista, int indice){
     user.matricula[3] = user.dtNasc[7];
     user.matricula[4] = user.dtNasc[8];
     user.matricula[5] = user.dtNasc[9];
-    sprintf(user.matricula + 6, "%d", indice);
+    sprintf(user.matricula + 6, "%d", indice+1);
 
-    printf("\n Matricula do aluno: %s", user.matricula);
+    printf("\n Matricula do aluno: %s\n", user.matricula);
     lista[indice] = user;
 }
 
@@ -245,10 +245,10 @@ void pesquisarSobreNome (Usuario *user, int tam){
         strcpy(sobrenome1, str.substring((*user).nome, (y + 1), length((*user).nome))) ;
         if (str.equalsIgnoreCase(sobrenome1,sobrenomeInformado)){
 
-            printf("\nNOME: %s",   (*user).nome);
-            printf("\nENDERECO: %s",   (*user).endereco);
-            printf("\nDATA NASCIMENTO: %s", (*user).dtNasc);
-            printf("\n\n+-------------------------------------------------+\n\n");
+		printf("\nnome: %s", (*user).nome);
+		printf("\nendereco: %s", (*user).endereco);
+		printf("\ndata nasc.: %s",(*user).dtNasc);
+		printf("\nmatricula: %s\n",(*user).matricula);
             return;
         }
         user++;
@@ -295,9 +295,10 @@ void pesquisarMesNasc (Usuario *user, int tam){
         strcpy(mes, str.substring((*user).dtNasc, (y + 1), (y + 3))) ;
         if (str.equals(mes,mesBusca)){
 
-            printf("\nNOME: %s",   				(*user).nome);
-            printf("\nENDERECO: %s",   			(*user).endereco);
-            printf("\nDATA NASCIMENTO: %s\n\n", (*user).dtNasc);
+		printf("\nnome: %s", (*user).nome);
+		printf("\nendereco: %s", (*user).endereco);
+		printf("\ndata nasc.: %s",(*user).dtNasc);
+		printf("\nmatricula: %s\n",(*user).matricula);
             achou = 1;
         }
         user++;
@@ -307,56 +308,58 @@ void pesquisarMesNasc (Usuario *user, int tam){
     }
 }
 
-/* void pesquisarAnoNasc (Usuario *user, int tam){ */
-/*     Usuario *auxiliar; */
-/*     char anoNasc[4]; */
-/*     char anoNascBusca[4]; */
-/*     int y, i; */
-/*     Biblioteca str = new */
+void pesquisarAnoNasc (Usuario *user, int tam){
+    char ano[4];
+    char anoBusca[4];
+    int y = 0, i;
+    int achou = 0;
+    Biblioteca str = new
 
-/*         auxiliar = user; */
-/*     printf("\nInforme o ANO DE NASCIMENTO: \n"); */
-/*     fflush(stdin); */
-/*     gets(anoNascBusca); */
+    printf("\nInforme o ANO DE NASCIMENTO: \n");
+    scanf("%s", anoBusca);
 
-/*     y = str.lastIndexOf((*auxiliar).dtNasc, '/' ); */
-/*     for (i=0; i< tam; i++){ */
-/*         strcpy(anoNasc, str.substring((*auxiliar).dtNasc, (y + 1), length((*auxiliar).dtNasc))) ; */
-/*         if (str.equalsIgnoreCase(anoNasc,anoNascBusca)){ */
+    for (i=0; i< tam; i++){
+        y = str.lastIndexOf((*user).dtNasc, '/' );
+        strcpy(ano, str.substring((*user).dtNasc, (y + 1), length((*user).dtNasc)));
+        
+        if (str.equals(ano,anoBusca)){
 
-/*             printf("\nNOME: %s",   				(*auxiliar).nome); */
-/*             printf("\nENDERECO: %s",   			(*auxiliar).endereco); */
-/*             printf("\nDATA NASCIMENTO: %s\n\n", (*auxiliar).dtNasc); */
-/*         }else { */
-/*             printf("Usuario nao encontrado\n\n!"); */
-/*             auxiliar++; */
-/*         } */
+		printf("\nnome: %s", (*user).nome);
+		printf("\nendereco: %s", (*user).endereco);
+		printf("\ndata nasc.: %s",(*user).dtNasc);
+		printf("\nmatricula: %s\n",(*user).matricula);
+            achou = 1;
+        }
+        user++;
+    }
+    if(!achou){
+        printf("Usuario nao encontrado\n\n!");
+    }
+}
 
-/*     } */
-/* } */
 
-/* void pesquisarMatricula (Usuario *user, int tam){ */
-/*     Usuario *auxiliar; */
-/*     char matBusca[8]; */
-/*     char matricula[8]; */
-/*     int i; */
-/*     Biblioteca str = new */
+void pesquisarMatricula (Usuario *user, int tam){
+    char matriculaBusca [8];
+    int y, i;
+    Biblioteca str = new
 
-/*         auxiliar = user; */
-/*     printf("\nInforme a MATRICULA: \n"); */
-/*     fflush(stdin); */
-/*     gets(matBusca); */
+    printf("\nInforme o MATRICULA:\n");
+    scanf("%s",matriculaBusca);
 
-/*     if (str.equals(matricula,matBusca)){ */
+    for (i=0; i< tam; i++){
 
-/*         printf("\nNOME: %s",   				(*auxiliar).nome); */
-/*         printf("\nENDERECO: %s",   			(*auxiliar).endereco); */
-/*         printf("\nDATA NASCIMENTO: %s\n\n",             (*auxiliar).dtNasc); */
-/*     }else { */
-/*         printf("Usuario nao encontrado!\n\n"); */
-/*         auxiliar++; */
-/*     } */
-/* } */
+		if (str.equalsIgnoreCase((*user).matricula,matriculaBusca)){	
+		printf("\nnome: %s", (*user).nome);
+		printf("\nendereco: %s", (*user).endereco);
+		printf("\ndata nasc.: %s",(*user).dtNasc);
+		printf("\nmatricula: %s\n",(*user).matricula);
+		
+            return;
+        }
+        user++;
+    }
+    printf("\n\nUsuario nao encontrado\n\n!");
+}
 
 void listarUsuarios(Usuario *user, int tam){
 	Usuario *auxiliar;
@@ -366,7 +369,7 @@ void listarUsuarios(Usuario *user, int tam){
 		printf("\nnome: %s", (*auxiliar).nome);
 		printf("\nendereco: %s", (*auxiliar).endereco);
 		printf("\ndata nasc.: %s",(*auxiliar).dtNasc);
-		printf("\nmatricula: %s",(*auxiliar).matricula);
+		printf("\nmatricula: %s\n",(*auxiliar).matricula);
 		auxiliar++;
 	}
 }
