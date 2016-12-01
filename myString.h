@@ -23,7 +23,7 @@ typedef struct {
     int   (*lastIndexOf)(char*, char);
     int   (*firstIndexOf)(char*, char);
 
-}String;
+}Biblioteca;
 
 #ifndef new
 #define new {.length=length, .equals=equals, .equalsIgnoreCase=equalsIgnoreCase, .substring=substring,.toUpperCase=toUpperCase, .toLowerCase=toLowerCase, .replace=replace, .lastIndexOf=lastIndexOf, .firstIndexOf=firstIndexOf};
